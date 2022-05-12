@@ -12,7 +12,7 @@ basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     handlers=[FileHandler('log.txt'), StreamHandler()],
                     level=INFO)
 
-CONFIG_FILE_URL = 'https://gist.githubusercontent.com/nryadav7412/27c95ae71836b5e0dec6d751fe8f28e9/raw/config.env'
+CONFIG_FILE_URL = environ.get('CONFIG_FILE_URL')
 try:
     if len(CONFIG_FILE_URL) == 0:
         raise TypeError
